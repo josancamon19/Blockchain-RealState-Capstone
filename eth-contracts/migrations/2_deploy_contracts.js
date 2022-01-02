@@ -1,10 +1,8 @@
 // migrating the appropriate contracts
-// var UdacityRealStateItem = artifacts.require("./UdacityRealStateItem.sol");
-var SquareVerifier = artifacts.require("./SquareVerifier.sol");
+var Verifier = artifacts.require("./Verifier.sol");
 var SolnSquareVerifier = artifacts.require("./SolnSquareVerifier.sol");
 
-module.exports = function (deployer) {
-  // deployer.deploy(UdacityRealStateItem);
-  deployer.deploy(SquareVerifier);
-  deployer.deploy(SolnSquareVerifier);
+module.exports = async function (deployer) {
+  await deployer.deploy(Verifier);
+  await deployer.deploy(SolnSquareVerifier, Verifier.address);
 };
