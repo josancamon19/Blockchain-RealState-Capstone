@@ -3,3 +3,6 @@ node_modules
 */artifacts/*
 package-lock.json
 */build/*
+eth-contracts/.secrets.json
+eth-contracts/build/
+eth-contracts/contracts/artifacts

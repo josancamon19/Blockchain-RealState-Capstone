@@ -15,16 +15,14 @@ contract('SolnSquareVerifier', accounts => {
     })
 
     it('an ERC721 token can be minted for contract', async () => {
-        const {
-            a,
-            b,
-            c
-        } = Proof1.proof;
-        try {
-            await this.contract.mintNFT(2, a, b, c, Proof1.inputs);
-        } catch (e) {
-            console.log(e);
-        }
+        const tokenId = 1902;
+        await this.contract.mintNFT(tokenId, Proof1.proof, Proof1.inputs);
+        let data = (await this.contract.getPastEvents('Transfer'))[0].returnValues;
+        let totalSupply = await this.contract.totalSupply();
+
+        assert.equal(data.tokenId, tokenId.toString());
+        assert.equal(data.to, accounts[0]);
+        assert.equal(totalSupply, 1)
 
     })
 });
