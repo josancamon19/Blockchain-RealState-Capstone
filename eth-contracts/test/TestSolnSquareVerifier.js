@@ -22,7 +22,6 @@ contract('SolnSquareVerifier', accounts => {
 
         assert.equal(data.tokenId, tokenId.toString());
         assert.equal(data.to, accounts[0]);
-        assert.equal(totalSupply, 1)
-
+        assert.equal(totalSupply, 1);
     })
 });

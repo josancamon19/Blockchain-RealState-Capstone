@@ -4,5 +4,4 @@ node_modules
 package-lock.json
 */build/*
 eth-contracts/.secrets.json
-eth-contracts/build/
 eth-contracts/contracts/artifacts
